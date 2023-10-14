@@ -27,7 +27,7 @@ public class Vendedor extends Directo {
 
         long comision = (long) (ventasDelMes * porcentajeComision);
         String comisionFormateada = splitNumeroConPuntos(comision);
-        System.out.println("Comisión formateada: " + comisionFormateada);
+        System.out.println("Comision formateada: " + comisionFormateada);
 
         return comision;
     }
