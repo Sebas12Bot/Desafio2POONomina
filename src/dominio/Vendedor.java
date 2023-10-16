@@ -12,11 +12,10 @@ public class Vendedor extends Directo {
     public long calcularSalario() {
         long salarioBase = super.calcularSalario();
         long comision = calcularComision();
-
         return salarioBase + comision;
     }
 
-    public long calcularComision() {
+    private long calcularComision() {
         double porcentajeComision;
 
         if (super.calcularSalario() <= 1500000) {
@@ -26,8 +25,7 @@ public class Vendedor extends Directo {
         }
 
         long comision = (long) (ventasDelMes * porcentajeComision);
-        String comisionFormateada = splitNumeroConPuntos(comision);
-        System.out.println("Comision formateada: " + comisionFormateada);
+        System.out.println("| Comision actualizada: " + splitNumeroConPuntos(comision));
 
         return comision;
     }

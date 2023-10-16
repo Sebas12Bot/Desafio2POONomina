@@ -15,9 +15,9 @@ public abstract class Empleado {
         return nombre;
     }
 
-    protected String splitNumeroConPuntos(long numero) {
+    protected String splitNumeroConPuntos(long number) {
         DecimalFormat formato = new DecimalFormat("#,###");
-        return formato.format(numero);
+        return formato.format(number);
     }
 }
 

@@ -8,6 +8,7 @@ public class Directo extends Empleado {
         this.salarioBase = salarioBase;
     }
 
+    @Override
     public long calcularSalario() {
         long salarioDespuesAportes = salarioBase - calcularAportes();
         double porcentajeComision;
@@ -21,13 +22,8 @@ public class Directo extends Empleado {
         long comision = (long) (salarioDespuesAportes * porcentajeComision);
         long salarioTotal = salarioDespuesAportes + comision;
 
-        String salarioFormateado = splitNumeroConPuntos(salarioTotal);
-        System.out.println("Salario formateado: " + salarioFormateado);
-
         return salarioTotal;
     }
-
-
 
     private long calcularAportes() {
         return calcularSalud() + calcularPension();

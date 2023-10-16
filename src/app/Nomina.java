@@ -4,6 +4,7 @@ import dominio.Empleado;
 import dominio.Directo;
 import dominio.Freelance;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +19,15 @@ public class Nomina {
     public void calcularNomina() {
         System.out.println("Nomina:");
         for (Empleado empleado : empleados) {
+            System.out.println("----------------------------------------------------");
+            String nombre = empleado.getNombre();
+            String tipoEmpleado = empleado.getClass().getSimpleName();
+            System.out.println("| " + tipoEmpleado + ": " + nombre);
             long salario = empleado.calcularSalario();
-            System.out.println(empleado.getNombre() + ": $" + salario);
+            String salarioFormateado = splitNumeroConPuntos(salario);
+            System.out.println("| Salario actualizado: $" + salarioFormateado);
         }
+        System.out.println("----------------------------------------------------");
     }
 
     public void listarDirectos() {
@@ -45,6 +52,11 @@ public class Nomina {
             }
         }
         System.out.println("-------------------\n");
+    }
 
+    private String splitNumeroConPuntos(long number) {
+        DecimalFormat formato = new DecimalFormat("#,###");
+        return formato.format(number);
     }
 }
+
