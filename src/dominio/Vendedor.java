@@ -18,7 +18,7 @@ public class Vendedor extends Directo {
     private long calcularComision() {
         double porcentajeComision;
 
-        if (super.calcularSalario() <= 1500000) {
+        if (super.calcularSalario() <= VALOR_LIMITE) {
             porcentajeComision = 0.045;
         } else {
             porcentajeComision = 0.035;

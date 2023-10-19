@@ -1,6 +1,9 @@
 package dominio;
 
 public class Directo extends Empleado {
+
+    public static final int VALOR_LIMITE = 1500000;
+
     private long salarioBase;
 
     public Directo(String nombre, long salarioBase) {
@@ -13,7 +16,7 @@ public class Directo extends Empleado {
         long salarioDespuesAportes = salarioBase - calcularAportes();
         double porcentajeComision;
 
-        if (salarioDespuesAportes <= 1500000) {
+        if (salarioDespuesAportes <= VALOR_LIMITE) {
             porcentajeComision = 0.045;
         } else {
             porcentajeComision = 0.035;
