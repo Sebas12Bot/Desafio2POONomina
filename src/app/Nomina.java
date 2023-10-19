@@ -31,29 +31,30 @@ public class Nomina {
     }
 
     public void listarDirectos() {
-        System.out.println("-------------------");
+        System.out.println("----------------------");
         System.out.println("| Empleados Directos");
-        System.out.println("-------------------");
+        System.out.println("----------------------");
         for (Empleado empleado : empleados) {
             if (empleado instanceof Directo) {
                 System.out.println("| " + empleado.getNombre());
             }
         }
-        System.out.println("-------------------\n");
+        System.out.println("----------------------\n");
     }
 
     public void listarFreelancer() {
-        System.out.println("-------------------");
+        System.out.println("----------------------");
         System.out.println("| Freelancers");
-        System.out.println("-------------------");
+        System.out.println("----------------------");
         for (Empleado empleado : empleados) {
             if (empleado instanceof Freelance) {
                 System.out.println("| " + empleado.getNombre());
             }
         }
-        System.out.println("-------------------\n");
+        System.out.println("----------------------\n");
     }
 
+    //Funcion adicionada por motivos visuales.
     private String splitNumeroConPuntos(long number) {
         DecimalFormat formato = new DecimalFormat("#,###");
         return formato.format(number);
