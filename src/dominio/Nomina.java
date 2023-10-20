@@ -50,7 +50,6 @@ public class Nomina {
         System.out.println("----------------------\n");
     }
 
-    //Funcion adicionada por motivos visuales.
     private String splitNumeroConPuntos(long number) {
         DecimalFormat formato = new DecimalFormat("#,###");
         return formato.format(number);
