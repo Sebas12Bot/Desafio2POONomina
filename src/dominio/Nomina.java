@@ -1,8 +1,4 @@
-package app;
-
-import dominio.Empleado;
-import dominio.Directo;
-import dominio.Freelance;
+package dominio;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
