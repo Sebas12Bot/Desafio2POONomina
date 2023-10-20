@@ -2,7 +2,7 @@ package app;
 
 import dominio.*;
 
-public class Main {
+public class AppNomina {
     public static void main(String[] args) {
         Nomina nomina = new Nomina();
 
@@ -15,8 +15,8 @@ public class Main {
 
         nomina.agregarEmpleado(juan);
         nomina.agregarEmpleado(julian);
-        nomina.agregarEmpleado(claudia);
         nomina.agregarEmpleado(johanna);
+        nomina.agregarEmpleado(claudia);
         nomina.agregarEmpleado(david);
         nomina.agregarEmpleado(gustavo);
 

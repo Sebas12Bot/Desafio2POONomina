@@ -28,7 +28,7 @@ public class Vendedor extends Directo {
         }
 
         long comision = (long) (ventasDelMes * porcentajeComision);
-        System.out.println("| Comision actualizada: " + splitNumeroConPuntos(comision));
+        System.out.println("| Comision total: " + splitNumeroConPuntos(comision));
 
         return comision;
     }
