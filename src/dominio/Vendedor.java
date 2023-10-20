@@ -1,6 +1,9 @@
 package dominio;
 
 public class Vendedor extends Directo {
+
+    public static final int VALOR_LIMITE = 1500000;
+
     protected long ventasDelMes;
 
     public Vendedor(String nombre, long salario, long ventasDelMes) {

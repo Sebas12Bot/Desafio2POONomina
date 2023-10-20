@@ -2,8 +2,6 @@ package dominio;
 
 public class Directo extends Empleado {
 
-    public static final int VALOR_LIMITE = 1500000;
-
     private long salario;
 
     public Directo(String nombre, long salario) {
