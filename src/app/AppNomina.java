@@ -12,6 +12,7 @@ public class AppNomina {
         Empleado claudia = new Vendedor("Claudia", 1380000, 35989000);
         Empleado david = new Directo("David", 3975000);
         Empleado gustavo = new Freelance("Gustavo", 42500, 65);
+        Empleado pedro = new Promotor("Pedro",2000,200,77);
 
         nomina.agregarEmpleado(juan);
         nomina.agregarEmpleado(julian);
@@ -19,9 +20,11 @@ public class AppNomina {
         nomina.agregarEmpleado(claudia);
         nomina.agregarEmpleado(david);
         nomina.agregarEmpleado(gustavo);
+        nomina.agregarEmpleado(pedro);
 
         nomina.calcularNomina();
         nomina.listarDirectos();
         nomina.listarFreelancer();
+        nomina.listarPromotor();
     }
 }
