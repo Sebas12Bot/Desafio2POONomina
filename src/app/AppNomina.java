@@ -14,7 +14,7 @@ public class AppNomina {
         Empleado gustavo = new Freelance("Gustavo", 42500, 65);
         Empleado pedro = new Promotor("Pedro",2000,200,77);
         //Prueba de ArithmeticException
-        Empleado chayanne = new Vendedor("Chayanne",-1000, -15000);
+        Empleado a = new Vendedor("A",-1000, -15000);
 
         nomina.agregarEmpleado(juan);
         nomina.agregarEmpleado(julian);
@@ -26,7 +26,7 @@ public class AppNomina {
         //Prueba de IllegalStateException
         nomina.agregarEmpleado(null);
         //Prueba de ArithmeticException
-        nomina.agregarEmpleado(chayanne);
+        nomina.agregarEmpleado(a);
 
         nomina.calcularNomina();
         nomina.listarDirectos();
