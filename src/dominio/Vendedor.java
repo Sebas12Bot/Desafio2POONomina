@@ -19,18 +19,24 @@ public class Vendedor extends Directo {
     }
 
     private long calcularComision() {
-        double porcentajeComision;
-
-        if (super.calcularSalario() <= VALOR_LIMITE) {
-            porcentajeComision = 0.045;
-        } else {
-            porcentajeComision = 0.035;
+        try {
+            double porcentajeComision;
+            if (super.calcularSalario() <= VALOR_LIMITE) {
+                porcentajeComision = 0.045;
+            } else {
+                porcentajeComision = 0.035;
+            }
+            if (ventasDelMes < 0) {
+                throw new IllegalArgumentException("Las ventas del mes no pueden ser un valor negativo.");
+            }
+            long comision = (long) (ventasDelMes * porcentajeComision);
+            System.out.println("| Comision total: $" + splitNumeroConPuntos(comision));
+            return comision;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error al calcular la comision: " + e.getMessage());
+            return 0;
         }
-
-        long comision = (long) (ventasDelMes * porcentajeComision);
-        System.out.println("| Comision total: $" + splitNumeroConPuntos(comision));
-
-        return comision;
     }
+
 }
 

@@ -9,7 +9,15 @@ public class Nomina {
     private List<Empleado> empleados = new ArrayList<>();
 
     public void agregarEmpleado(Empleado empleado) {
-        empleados.add(empleado);
+        try {
+            if (empleado != null) {
+                empleados.add(empleado);
+            } else {
+                throw new IllegalStateException("No es posible agregar un empledo con valor null");
+            }
+        } catch (IllegalStateException e) {
+            System.out.println("Error al agregar el empleado: \n" + "Detalles del error: " + e.getMessage());
+        }
     }
 
     public void calcularNomina() {

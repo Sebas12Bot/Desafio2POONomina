@@ -13,6 +13,8 @@ public class AppNomina {
         Empleado david = new Directo("David", 3975000);
         Empleado gustavo = new Freelance("Gustavo", 42500, 65);
         Empleado pedro = new Promotor("Pedro",2000,200,77);
+        //Prueba de ArithmeticException
+        Empleado chayanne = new Vendedor("Chayanne",-1000, -15000);
 
         nomina.agregarEmpleado(juan);
         nomina.agregarEmpleado(julian);
@@ -21,6 +23,10 @@ public class AppNomina {
         nomina.agregarEmpleado(david);
         nomina.agregarEmpleado(gustavo);
         nomina.agregarEmpleado(pedro);
+        //Prueba de IllegalStateException
+        nomina.agregarEmpleado(null);
+        //Prueba de ArithmeticException
+        nomina.agregarEmpleado(chayanne);
 
         nomina.calcularNomina();
         nomina.listarDirectos();
