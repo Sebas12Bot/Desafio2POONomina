@@ -4,6 +4,10 @@ public class Vendedor extends Directo {
 
     public static final int VALOR_LIMITE = 1500000;
 
+    public static final double VALOR_PORCENTAJE_COMISION_UNO = 0.045;
+
+    public static final double VALOR_PORCENTAJE_COMISION_DOS = 0.035;
+
     protected long ventasDelMes;
 
     public Vendedor(String nombre, long salario, long ventasDelMes) {
@@ -22,9 +26,9 @@ public class Vendedor extends Directo {
         try {
             double porcentajeComision;
             if (super.calcularSalario() <= VALOR_LIMITE) {
-                porcentajeComision = 0.045;
+                porcentajeComision = VALOR_PORCENTAJE_COMISION_UNO;
             } else {
-                porcentajeComision = 0.035;
+                porcentajeComision = VALOR_PORCENTAJE_COMISION_DOS;
             }
             if (ventasDelMes < 0) {
                 throw new IllegalArgumentException("Las ventas del mes no pueden ser un valor negativo.");
@@ -33,7 +37,7 @@ public class Vendedor extends Directo {
             System.out.println("| Comision total: $" + splitNumeroConPuntos(comision));
             return comision;
         } catch (IllegalArgumentException e) {
-            System.out.println("Error al calcular la comision: " + e.getMessage());
+            System.out.println("+Error al calcular la comision: " + e.getMessage());
             return 0;
         }
     }

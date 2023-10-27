@@ -16,6 +16,16 @@ public class Promotor extends Empleado {
 
     @Override
     public long calcularSalario() {
-        return (volantesRepartidos * valorVolante) + (comprasVolantes * VALOR_POR_COMPRA);
+        try {
+            if (volantesRepartidos < 0 || valorVolante < 0 || comprasVolantes < 0) {
+                throw new IllegalArgumentException("Los valores no pueden ser negativos.");
+            }
+            long salario = (volantesRepartidos * valorVolante) + (comprasVolantes * VALOR_POR_COMPRA);
+            System.out.println("| Salario total: $" + splitNumeroConPuntos(salario));
+            return salario;
+        } catch (IllegalArgumentException e) {
+            System.out.println("+Error al calcular el salario: \n" + "Detalles del error: " + e.getMessage());
+            return 0;
+        }
     }
 }

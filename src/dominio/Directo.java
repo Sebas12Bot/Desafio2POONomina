@@ -15,7 +15,7 @@ public class Directo extends Empleado {
             long salarioDespuesAportes = salario - calcularAportes();
             return salarioDespuesAportes;
         } catch (IllegalArgumentException e) {
-            System.out.println("Error al calcular el salario: \n" + "Detalles del error: " + e.getMessage());
+            System.out.println("+Error al calcular el salario: \n" + "Detalles del error: " + e.getMessage());
             return 0;
         }
     }

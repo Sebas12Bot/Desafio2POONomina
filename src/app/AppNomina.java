@@ -15,6 +15,10 @@ public class AppNomina {
         Empleado pedro = new Promotor("Pedro",2000,200,77);
         //Prueba de ArithmeticException
         Empleado a = new Vendedor("A",-1000, -15000);
+        //Prueba excepcion freelance
+        Empleado b = new Freelance("B",-1,-2);
+        //Prueba de excepcion promotor
+        Empleado c = new Promotor("C",-2,-7,-8);
 
         nomina.agregarEmpleado(juan);
         nomina.agregarEmpleado(julian);
@@ -27,6 +31,12 @@ public class AppNomina {
         nomina.agregarEmpleado(null);
         //Prueba de ArithmeticException
         nomina.agregarEmpleado(a);
+        //Prueba excepcion freelance
+        nomina.agregarEmpleado(b);
+        //Prueba de excepcion promotor
+        nomina.agregarEmpleado(c);
+
+
 
         nomina.calcularNomina();
         nomina.listarDirectos();
